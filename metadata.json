@@ -1,0 +1,6 @@
+{
+  "name": "Kasper Capital Markets | Links",
+  "description": "Mobile-first link in bio page for Kasper Capital Markets Ltd.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

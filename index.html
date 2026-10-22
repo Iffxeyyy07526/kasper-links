@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kasper Capital Markets | Links</title>
+  <meta name="description" content="Official links and resources for Kasper Capital Markets Ltd. Forex &amp; CFD trading on MT5. Transparency and education first.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kasper Capital Markets | Links">
+  <meta property="og:description" content="Forex &amp; CFD trading on MT5. Transparency and education first.">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kasper Capital Markets | Links">
+  <meta name="twitter:description" content="Forex &amp; CFD trading on MT5. Transparency and education first.">
+  <meta name="twitter:image" content="logo.png">
+
+  <style>
+    /* CSS Reset & Variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color: #0a0f1a;
+      --bg-card: rgba(15, 23, 42, 0.72);
+      --bg-card-hover: rgba(22, 34, 58, 0.85);
+      --bg-card-active: rgba(26, 42, 70, 0.95);
+      --accent-green: #2ee86b;
+      --accent-green-bright: #39ec75;
+      --accent-glow: rgba(46, 232, 107, 0.35);
+      --accent-glow-subtle: rgba(46, 232, 107, 0.16);
+      --text-primary: #ffffff;
+      --text-secondary: #c9d1d9;
+      --text-muted: #64748b;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(46, 232, 107, 0.5);
+      --radius-btn: 16px;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html, body {
+      min-height: 100%;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.45;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px 14px 40px;
+      overflow-x: hidden;
+      background-color: var(--bg-color);
+    }
+
+    /* Screen Reader Only (For accessible semantics without visual duplicate) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Abstract Trading Grid & Candlestick Background */
+    .bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 10%, rgba(22, 42, 70, 0.7) 0%, rgba(10, 15, 26, 0.95) 60%, #0a0f1a 100%);
+    }
+
+    /* Faint glowing grid */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(46, 232, 107, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(46, 232, 107, 0.04) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 36px 36px, 36px 36px, 144px 144px, 144px 144px;
+      mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 85%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 85%);
+    }
+
+    /* Candlestick shapes */
+    .bg-candles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.28;
+    }
+
+    /* Subtle edge vignette */
+    .bg-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, transparent 50%, rgba(5, 8, 14, 0.75) 100%);
+    }
+
+    /* Top Utility Bar (Subtle Share Button) */
+    .top-bar {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 6px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .share-btn:hover, .share-btn:focus-visible {
+      color: var(--text-primary);
+      border-color: var(--accent-green);
+      background: rgba(22, 32, 54, 0.9);
+      box-shadow: 0 0 12px var(--accent-glow-subtle);
+      outline: none;
+    }
+
+    .share-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Page Container */
+    .page-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header Profile Section */
+    .profile-section {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .logo-wrapper {
+      position: relative;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Enhanced Soft Glowing Green Halo Behind Logo */
+    .logo-glow {
+      position: absolute;
+      width: 290px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(46, 232, 107, 0.38) 0%, rgba(46, 232, 107, 0.12) 55%, transparent 75%);
+      filter: blur(32px);
+      -webkit-filter: blur(32px);
+      z-index: 0;
+      transform: translateZ(0);
+      pointer-events: none;
+    }
+
+    /* Logo enlarged ~20% (approx 268px wide) */
+    .logo-img {
+      position: relative;
+      z-index: 1;
+      width: 268px;
+      max-width: 82vw;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+    }
+
+    /* Tagline */
+    .tagline {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 380px;
+      line-height: 1.45;
+      font-weight: 500;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+
+    .highlight-mt5 {
+      color: var(--accent-green);
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(46, 232, 107, 0.35);
+    }
+
+    /* Three Pill Chips Under Tagline */
+    .chips-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #cbd5e1;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      letter-spacing: 0.01em;
+    }
+
+    .chip-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      box-shadow: 0 0 6px var(--accent-green);
+      flex-shrink: 0;
+    }
+
+    /* Round Social Icons Row (Tightened vertical spacing) */
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+      margin-bottom: 18px;
+      width: 100%;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(46, 232, 107, 0.55);
+      color: var(--accent-green);
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(46, 232, 107, 0.18), inset 0 0 8px rgba(46, 232, 107, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .social-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .social-btn:hover, .social-btn:focus-visible {
+      color: #ffffff;
+      border-color: var(--accent-green);
+      background-color: rgba(22, 34, 58, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--accent-glow), inset 0 0 12px rgba(46, 232, 107, 0.25);
+      outline: none;
+    }
+
+    .social-btn:active {
+      transform: scale(0.92);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    /* Links Column (Tightened gap for compact view) */
+    .links-column {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 26px;
+    }
+
+    /* Link Button Base */
+    .link-btn {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: var(--radius-btn);
+      min-height: 60px;
+      padding: 11px 16px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .link-btn:focus-visible {
+      outline: 2px solid var(--accent-green);
+      outline-offset: 3px;
+    }
+
+    /* Primary CTA Button (Open an Account) - Shine Sweep & Gentle Glow Pulse */
+    .link-btn-primary {
+      background: var(--accent-green);
+      color: #07150d;
+      border: 1px solid var(--accent-green);
+      box-shadow: 0 4px 18px rgba(46, 232, 107, 0.28);
+      position: relative;
+      overflow: hidden;
+      animation: primary-glow-pulse 3.8s ease-in-out infinite;
+    }
+
+    /* Slow subtle shine sweep animation */
+    .link-btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -130%;
+      width: 65%;
+      height: 220%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.38) 50%,
+        transparent 100%
+      );
+      transform: rotate(25deg);
+      animation: shine-sweep 4.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shine-sweep {
+      0%, 45% {
+        left: -130%;
+      }
+      75%, 100% {
+        left: 170%;
+      }
+    }
+
+    @keyframes primary-glow-pulse {
+      0%, 100% {
+        box-shadow: 0 4px 18px rgba(46, 232, 107, 0.28);
+      }
+      50% {
+        box-shadow: 0 6px 26px rgba(46, 232, 107, 0.52);
+      }
+    }
+
+    .link-btn-primary .link-icon-box {
+      background: rgba(7, 21, 13, 0.15);
+      color: #07150d;
+    }
+
+    .link-btn-primary .link-title {
+      color: #07150d;
+      font-weight: 700;
+    }
+
+    .link-btn-primary .link-subtitle {
+      color: rgba(7, 21, 13, 0.85);
+      font-weight: 500;
+    }
+
+    .link-btn-primary .chevron-icon {
+      color: #07150d;
+    }
+
+    .link-btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--accent-green-bright);
+      box-shadow: 0 8px 30px rgba(46, 232, 107, 0.55);
+    }
+
+    .link-btn-primary:active {
+      transform: scale(0.985);
+      background: #25d45e;
+      box-shadow: 0 3px 12px rgba(46, 232, 107, 0.4);
+    }
+
+    /* Outlined Dark Buttons (Glassmorphism + Thin Green Left Border Accent + Clear Pressed State) */
+    .link-btn-secondary {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-left: 3.5px solid var(--accent-green);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .link-btn-secondary .link-icon-box {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--accent-green);
+      border: 1px solid rgba(46, 232, 107, 0.2);
+    }
+
+    .link-btn-secondary .link-title {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .link-btn-secondary .link-subtitle {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .link-btn-secondary .chevron-icon {
+      color: var(--text-muted);
+    }
+
+    .link-btn-secondary:hover {
+      transform: translateY(-2px);
+      background-color: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      border-left-color: var(--accent-green-bright);
+      box-shadow: 0 6px 20px -2px var(--accent-glow);
+    }
+
+    .link-btn-secondary:hover .chevron-icon {
+      color: var(--accent-green);
+      transform: translateX(2px);
+    }
+
+    /* Clear Pressed State on Tap */
+    .link-btn-secondary:active {
+      transform: scale(0.985);
+      background-color: var(--bg-card-active);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+      border-left-color: var(--accent-green);
+    }
+
+    /* Inside Link Button */
+    .link-icon-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      margin-right: 13px;
+      transition: transform 0.2s ease;
+    }
+
+    .link-icon-box svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .link-text-group {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .link-title {
+      font-size: 15px;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link-subtitle {
+      font-size: 12.5px;
+      line-height: 1.35;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chevron-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .chevron-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* Footer Section */
+    .page-footer {
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+    }
+
+    /* Footer Links Row */
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-link {
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover, .footer-link:focus-visible {
+      color: var(--accent-green);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .footer-dot {
+      color: #475569;
+      font-size: 11px;
+    }
+
+    .risk-warning {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #111e33;
+      color: #ffffff;
+      border: 1px solid var(--accent-green);
+      padding: 9px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px var(--accent-glow);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast svg {
+      color: var(--accent-green);
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .link-btn-primary {
+        animation: none !important;
+      }
+      .link-btn-primary::after {
+        display: none !important;
+      }
+      .link-btn:hover, .social-btn:hover, .link-btn:active, .social-btn:active {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Reader Accessible Main Heading -->
+  <h1 class="sr-only">Kasper Capital Markets</h1>
+
+  <!-- Background Decorative Grid, Candlesticks & Vignette -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <svg class="bg-candles" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bull-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#2ee86b" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#2ee86b" stop-opacity="0.12" />
+        </linearGradient>
+        <linearGradient id="bear-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#64748b" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#64748b" stop-opacity="0.08" />
+        </linearGradient>
+      </defs>
+
+      <!-- Faint Trend Line -->
+      <path d="M 0 540 Q 300 480 600 360 T 1200 210" fill="none" stroke="#2ee86b" stroke-width="1.4" stroke-opacity="0.32" stroke-dasharray="5 5" />
+
+      <!-- Left Cluster (Bullish Wave) -->
+      <line x1="80" y1="460" x2="80" y2="580" stroke="#64748b" stroke-width="1.2" />
+      <rect x="73" y="490" width="14" height="60" rx="2" fill="url(#bear-glow)" />
+
+      <line x1="130" y1="430" x2="130" y2="540" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="123" y="450" width="14" height="70" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <line x1="180" y1="390" x2="180" y2="510" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="173" y="410" width="14" height="80" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <line x1="230" y1="370" x2="230" y2="480" stroke="#64748b" stroke-width="1.2" />
+      <rect x="223" y="400" width="14" height="50" rx="2" fill="url(#bear-glow)" />
+
+      <line x1="280" y1="330" x2="280" y2="450" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="273" y="350" width="14" height="75" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <!-- Center Wave -->
+      <line x1="520" y1="310" x2="520" y2="440" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.55" />
+      <rect x="513" y="330" width="14" height="85" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.4" />
+
+      <line x1="570" y1="280" x2="570" y2="410" stroke="#64748b" stroke-width="1.2" />
+      <rect x="563" y="310" width="14" height="60" rx="2" fill="url(#bear-glow)" />
+
+      <line x1="620" y1="250" x2="620" y2="380" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="613" y="270" width="14" height="90" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <!-- Right Cluster -->
+      <line x1="920" y1="180" x2="920" y2="310" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="913" y="200" width="14" height="85" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <line x1="970" y1="160" x2="970" y2="280" stroke="#2ee86b" stroke-width="1.2" stroke-opacity="0.65" />
+      <rect x="963" y="175" width="14" height="75" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.5" />
+
+      <line x1="1020" y1="150" x2="1020" y2="260" stroke="#64748b" stroke-width="1.2" />
+      <rect x="1013" y="170" width="14" height="50" rx="2" fill="url(#bear-glow)" />
+
+      <line x1="1070" y1="120" x2="1070" y2="230" stroke="#2ee86b" stroke-width="1.4" stroke-opacity="0.75" />
+      <rect x="1063" y="135" width="14" height="70" rx="2" fill="url(#bull-glow)" stroke="#2ee86b" stroke-width="1" stroke-opacity="0.6" />
+    </svg>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- Top Utilities Bar -->
+  <div class="top-bar">
+    <button class="share-btn" id="shareBtn" aria-label="Share this link page">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="18" cy="5" r="3"></circle>
+        <circle cx="6" cy="12" r="3"></circle>
+        <circle cx="18" cy="19" r="3"></circle>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+      </svg>
+      <span>Share</span>
+    </button>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="page-container">
+
+    <!-- Profile Header (Logo 20% larger, duplicate text heading removed) -->
+    <header class="profile-section">
+      <div class="logo-wrapper">
+        <div class="logo-glow" aria-hidden="true"></div>
+        <img src="logo.png" alt="Kasper Capital Markets" class="logo-img" width="268" height="73">
+      </div>
+      <p class="tagline">Forex &amp; CFD trading on <span class="highlight-mt5">MT5</span>. Transparency and education first.</p>
+
+      <!-- Three Pill Chips Under Tagline -->
+      <div class="chips-row">
+        <span class="chip"><span class="chip-dot" aria-hidden="true"></span>MetaTrader 5</span>
+        <span class="chip"><span class="chip-dot" aria-hidden="true"></span>Transparent Conditions</span>
+        <span class="chip"><span class="chip-dot" aria-hidden="true"></span>Trading Education</span>
+      </div>
+    </header>
+
+    <!-- Social Icon Buttons Row (Bright Emerald Green Icons with Green Border & Glow) -->
+    <nav class="social-row" aria-label="Social Profiles">
+      <!-- YouTube: Official-style play-in-rounded-rectangle -->
+      <a href="https://youtube.com/@kaspercapitalfx?si=X-Tny9iMyulqK8y6"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-btn"
+         aria-label="YouTube Channel"
+         data-link="social-youtube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+
+      <!-- Telegram: Official-style paper plane in circle -->
+      <a href="https://t.me/kasperfxglobal"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-btn"
+         aria-label="Telegram Channel"
+         data-link="social-telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.919z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram: Official-style camera glyph -->
+      <a href="https://www.instagram.com/kaspercapital.fx?mdxt=emhhczdoMmNpNHFn"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-btn"
+         aria-label="Instagram Profile"
+         data-link="social-instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Main Links Column -->
+    <section class="links-column" aria-label="Direct Links">
+
+      <!-- 1. Open an Account (Primary CTA: Neutral User/Trader Icon, Shine Sweep & Glow Pulse) -->
+      <a href="https://client.kasperfx.com/client/register/6a4da0a71f71a"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-primary"
+         data-link="open-account">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Open an Account</span>
+          <span class="link-subtitle">Start in minutes</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 2. Join our Telegram (Recognizable Telegram Paper Plane Brand Icon) -->
+      <a href="https://t.me/kasperfxglobal"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-secondary"
+         data-link="telegram-channel">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15.7-.95 4.54-1.34 6.64-.17.89-.5 1.19-.81 1.22-.69.06-1.21-.45-1.88-.89-1.04-.68-1.63-1.11-2.64-1.78-1.17-.77-.41-1.2.26-1.89.17-.18 3.19-2.92 3.25-3.18.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.88 1.19-5.3 3.5-.5.34-.96.51-1.37.5-.46-.01-1.33-.26-1.98-.47-.8-.26-1.43-.4-1.38-.85.03-.23.35-.47.96-.72 3.76-1.64 6.27-2.72 7.53-3.24 3.58-1.49 4.33-1.75 4.81-1.76.11 0 .34.03.49.16.13.11.16.26.18.37-.01.07.01.22 0 .28z"/>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Join our Telegram</span>
+          <span class="link-subtitle">Daily market notes and updates</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 3. Watch on YouTube (Recognizable YouTube Brand Icon) -->
+      <a href="https://youtube.com/@kaspercapitalfx?si=X-Tny9iMyulqK8y6"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-secondary"
+         data-link="youtube-channel">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Watch on YouTube</span>
+          <span class="link-subtitle">Trading education and tutorials</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 4. Follow on Instagram (Recognizable Instagram Camera Glyph Brand Icon) -->
+      <a href="https://www.instagram.com/kaspercapital.fx?mdxt=emhhczdoMmNpNHFn"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-secondary"
+         data-link="instagram-profile">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Follow on Instagram</span>
+          <span class="link-subtitle">@kaspercapital.fx</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 5. Visit Our Website (Neutral Globe Icon) -->
+      <a href="https://kasperfx.com"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-secondary"
+         data-link="official-website">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Visit Our Website</span>
+          <span class="link-subtitle">kasperfx.com</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 6. Chat on WhatsApp (Recognizable WhatsApp Speech Bubble with Phone Brand Icon) -->
+      <a href="https://wa.me/447344994847"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link-btn link-btn-secondary"
+         data-link="whatsapp-chat">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.29C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15ZM16.57 14.33C16.32 14.2 15.11 13.61 14.88 13.53C14.66 13.44 14.5 13.4 14.33 13.65C14.17 13.9 13.71 14.44 13.56 14.61C13.42 14.77 13.28 14.8 13.03 14.67C12.78 14.55 11.99 14.29 11.05 13.45C10.31 12.79 9.81 11.98 9.67 11.73C9.53 11.48 9.65 11.35 9.78 11.23C9.89 11.11 10.03 10.93 10.15 10.78C10.28 10.64 10.32 10.54 10.4 10.37C10.48 10.21 10.44 10.07 10.38 9.95C10.32 9.82 9.83 8.62 9.62 8.12C9.42 7.63 9.22 7.7 9.07 7.69C8.93 7.68 8.76 7.68 8.6 7.68C8.43 7.68 8.16 7.74 7.93 7.99C7.71 8.24 7.07 8.84 7.07 10.05C7.07 11.27 7.96 12.44 8.08 12.6C8.21 12.77 9.83 15.26 12.31 16.33C12.9 16.59 13.36 16.74 13.72 16.85C14.31 17.04 14.85 17.01 15.28 16.95C15.76 16.88 16.75 16.35 16.96 15.77C17.17 15.19 17.17 14.69 17.11 14.6C17.04 14.49 16.82 14.45 16.57 14.33Z"/>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Chat on WhatsApp</span>
+          <span class="link-subtitle">Talk to our team</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 7. Email Support (Neutral Envelope Mail Icon) -->
+      <a href="mailto:Support@kasperfx.com"
+         class="link-btn link-btn-secondary"
+         data-link="email-support">
+        <div class="link-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+        </div>
+        <div class="link-text-group">
+          <span class="link-title">Email Support</span>
+          <span class="link-subtitle">Support@kasperfx.com</span>
+        </div>
+        <div class="chevron-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <!-- Footer Text Links (Replace '#' with your live URL endpoints when ready) -->
+      <div class="footer-links">
+        <!-- Replace href="#" with your real Terms URL e.g. https://kasperfx.com/terms -->
+        <a href="#" class="footer-link">Terms</a>
+        <span class="footer-dot" aria-hidden="true">&bull;</span>
+        <!-- Replace href="#" with your real Privacy URL e.g. https://kasperfx.com/privacy -->
+        <a href="#" class="footer-link">Privacy</a>
+        <span class="footer-dot" aria-hidden="true">&bull;</span>
+        <!-- Replace href="#" with your real Risk Disclosure URL e.g. https://kasperfx.com/risk-disclosure -->
+        <a href="#" class="footer-link">Risk Disclosure</a>
+      </div>
+
+      <!-- Risk Warning (Always visible) -->
+      <p class="risk-warning">
+        Trading forex and CFDs involves a high risk of loss and may not be suitable for everyone. Capital at risk. Not available to residents of the UAE, USA, Cuba, Iraq, Myanmar, North Korea, and Sudan.
+      </p>
+
+      <!-- Copyright Line -->
+      <p class="copyright">
+        &copy; 2026 Kasper Capital Markets Ltd.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMsg">Link copied to clipboard!</span>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. Analytics & Click Tracking Hook (Ready to plug in)
+       ========================================================================== */
+    function trackButtonClick(linkIdentifier, destinationUrl) {
+      // Plug in your analytics provider here without modifying link URLs.
+      // Examples:
+      //
+      // Google Analytics 4:
+      // if (typeof gtag === 'function') {
+      //   gtag('event', 'link_click', {
+      //     event_category: 'Bio Links',
+      //     link_id: linkIdentifier,
+      //     destination: destinationUrl
+      //   });
+      // }
+      //
+      // Cloudflare Web Analytics / Custom Beacon:
+      // navigator.sendBeacon('/api/track', JSON.stringify({ link: linkIdentifier, time: Date.now() }));
+    }
+
+    // Attach non-intrusive event listeners using data-link attribute
+    document.querySelectorAll('[data-link]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        var linkId = this.getAttribute('data-link');
+        var destUrl = this.getAttribute('href');
+        trackButtonClick(linkId, destUrl);
+      });
+    });
+
+    /* ==========================================================================
+       2. Web Share API with Clipboard Fallback
+       ========================================================================== */
+    var shareBtn = document.getElementById('shareBtn');
+    var toast = document.getElementById('toast');
+    var toastMsg = document.getElementById('toastMsg');
+    var toastTimer = null;
+
+    function showToast(message) {
+      if (toastTimer) clearTimeout(toastTimer);
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      toastTimer = setTimeout(function() {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function() {
+        var shareData = {
+          title: 'Kasper Capital Markets | Links',
+          text: 'Official links and resources for Kasper Capital Markets Ltd. Forex & CFD trading on MT5.',
+          url: window.location.href
+        };
+
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+          navigator.share(shareData).catch(function(err) {
+            if (err.name !== 'AbortError') {
+              copyToClipboard(window.location.href);
+            }
+          });
+        } else {
+          copyToClipboard(window.location.href);
+        }
+      });
+    }
+
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showToast('Link copied to clipboard!');
+        }).catch(function() {
+          fallbackCopyText(text);
+        });
+      } else {
+        fallbackCopyText(text);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      var textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        var successful = document.execCommand('copy');
+        if (successful) {
+          showToast('Link copied to clipboard!');
+        } else {
+          showToast('Failed to copy link');
+        }
+      } catch (err) {
+        showToast('Failed to copy link');
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
+</body>
+</html>
